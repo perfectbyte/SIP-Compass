@@ -1,0 +1,26 @@
+# Updater output that is personal to each machine
+sip-cache.sqlite3
+sip-cache.sqlite3-*
+update-report.json
+updater.lock
+.sip-write-check-*
+
+# Python / Node
+__pycache__/
+*.pyc
+node_modules/
+package-lock.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Private notes kept beside the repo
+_private/
+_archive/
+
+# Personal backups exported from the app
+sip-compass-backup-*.json

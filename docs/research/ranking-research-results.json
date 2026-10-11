@@ -1,0 +1,361 @@
+{
+  "method": "Current scoring rules, six annual starts, 5-year minimum training history, top-five equal initial weights bought at the first available NAV after selection and held to the three-year endpoint; compare with eligible-category median forward CAGR. No rebalancing; before tax and exit loads; NAV expenses already reflected.",
+  "limits": [
+    "Present-day fund universe: closed or merged funds may be absent (survivorship bias).",
+    "Present-day scheme names and categories; no point-in-time classifications.",
+    "Overlapping three-year outcomes are not independent observations.",
+    "No historical TER/AUM inputs; no claim of out-of-sample strategy validation.",
+    "This is a lump-sum selection comparison, not a SIP return calculation."
+  ],
+  "windows": [
+    {
+      "category": "flexi",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 16,
+      "portfolio": 0.244895085331005,
+      "median": 0.20464987443646065,
+      "excess": 0.04024521089454436
+    },
+    {
+      "category": "flexi",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "eligible": 17,
+      "portfolio": 0.16701847544170567,
+      "median": 0.1702828581128708,
+      "excess": -0.0032643826711651336
+    },
+    {
+      "category": "flexi",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "eligible": 18,
+      "portfolio": 0.23386386652275837,
+      "median": 0.23128378707540442,
+      "excess": 0.0025800794473539446
+    },
+    {
+      "category": "flexi",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "eligible": 18,
+      "portfolio": 0.15199265167006648,
+      "median": 0.17805416488489223,
+      "excess": -0.02606151321482575
+    },
+    {
+      "category": "flexi",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "eligible": 19,
+      "portfolio": 0.1755260600169768,
+      "median": 0.18960811210363215,
+      "excess": -0.014082052086655361
+    },
+    {
+      "category": "flexi",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 22,
+      "portfolio": 0.11946333699418976,
+      "median": 0.10457609350958708,
+      "excess": 0.014887243484602686
+    },
+    {
+      "category": "large",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 26,
+      "portfolio": 0.1927041888242731,
+      "median": 0.18657289721376313,
+      "excess": 0.006131291610509959
+    },
+    {
+      "category": "large",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "large",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "large",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "large",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "large",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 23,
+      "portfolio": 0.08465038889688548,
+      "median": 0.08906812148740317,
+      "excess": -0.004417732590517698
+    },
+    {
+      "category": "largemid",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 18,
+      "portfolio": 0.23576503686561567,
+      "median": 0.20819884983696268,
+      "excess": 0.02756618702865299
+    },
+    {
+      "category": "largemid",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "largemid",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "largemid",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "largemid",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "largemid",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 20,
+      "portfolio": 0.11890988147060422,
+      "median": 0.1177258206915891,
+      "excess": 0.001184060779015117
+    },
+    {
+      "category": "mid",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 17,
+      "portfolio": 0.2285105759999948,
+      "median": 0.24798111532257017,
+      "excess": -0.019470539322575364
+    },
+    {
+      "category": "mid",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "mid",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "mid",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "mid",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "mid",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 18,
+      "portfolio": 0.13898654510545372,
+      "median": 0.1426842958248189,
+      "excess": -0.003697750719365178
+    },
+    {
+      "category": "multi",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 8,
+      "portfolio": 0.23147597379383167,
+      "median": 0.21016665411667057,
+      "excess": 0.021309319677161098
+    },
+    {
+      "category": "multi",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "multi",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "multi",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "multi",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "eligible": 6,
+      "portfolio": 0.19718711686732515,
+      "median": 0.21080018540373668,
+      "excess": -0.013613068536411532
+    },
+    {
+      "category": "multi",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 6,
+      "portfolio": 0.12809854666478637,
+      "median": 0.12466797134520158,
+      "excess": 0.0034305753195847943
+    },
+    {
+      "category": "small",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 10,
+      "portfolio": 0.2642979391895115,
+      "median": 0.2620300157466606,
+      "excess": 0.002267923442850872
+    },
+    {
+      "category": "small",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "eligible": 14,
+      "portfolio": 0.32226939808959965,
+      "median": 0.3098478441458914,
+      "excess": 0.012421553943708252
+    },
+    {
+      "category": "small",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "small",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "small",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "small",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 13,
+      "portfolio": 0.12971175382552458,
+      "median": 0.1410274522744459,
+      "excess": -0.01131569844892133
+    },
+    {
+      "category": "elss",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "eligible": 24,
+      "portfolio": 0.215044474805423,
+      "median": 0.2028368210957121,
+      "excess": 0.012207653709710886
+    },
+    {
+      "category": "elss",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "elss",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "elss",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "elss",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "elss",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1538352000000,
+      "end": 1633046400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1569888000000,
+      "end": 1664582400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1601510400000,
+      "end": 1696118400000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1633046400000,
+      "end": 1727740800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1664582400000,
+      "end": 1759276800000,
+      "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+    },
+    {
+      "category": "baf",
+      "cut": 1696118400000,
+      "end": 1790812800000,
+      "eligible": 13,
+      "portfolio": 0.0930018217728732,
+      "median": 0.0972056459746653,
+      "excess": -0.004203824201792106
+    }
+  ],
+  "message": "11 of 20 available comparisons exceeded the category median. 28 comparisons were withheld. This describes this biased sample; it is not a forecast or a probability of winning.\n\nCATEGORY\tSELECTION DATE\tELIGIBLE FUNDS\tTOP-FIVE BASKET CAGR\tMEDIAN FUND CAGR\tDIFFERENCE\nFlexi Cap\t2018-10-01\t16\t24.49%\t20.46%\t4.02 pp\nFlexi Cap\t2019-10-01\t17\t16.70%\t17.03%\t-0.33 pp\nFlexi Cap\t2020-10-01\t18\t23.39%\t23.13%\t0.26 pp\nFlexi Cap\t2021-10-01\t18\t15.20%\t17.81%\t-2.61 pp\nFlexi Cap\t2022-10-01\t19\t17.55%\t18.96%\t-1.41 pp\nFl"
+}

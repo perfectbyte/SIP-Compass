@@ -1,0 +1,1183 @@
+{
+  "date": "2026-10-09",
+  "baseline": {
+    "version": "v1.4.3",
+    "sha256": "6fe785244b7b46438f99d656e56713a25dcc36da65a14ba21ae24f017dfd9f13",
+    "selfTests": 88
+  },
+  "appSelfTests": 100,
+  "updaterUnitTests": 26,
+  "legacyIntegration": {
+    "checks": [
+      "partial category download retried exactly three times",
+      "75% download coverage withholds flexi category",
+      "complete categories retain ranking",
+      "held-back book is excluded from holdings picker",
+      "held-back funds are excluded from AI context",
+      "index remains an effective tie",
+      "liquid and arbitrage remain ranked",
+      "successful retry restores category and picker",
+      "all 100 self-tests pass with populated mock data",
+      "self-tests restore populated data and user settings",
+      "maturity list renders from complete data",
+      "withheld maturity has neither recommendation nor ladder rows",
+      "old cache cannot restore false liquid ties"
+    ],
+    "errors": [],
+    "viewports": [
+      1440,
+      390
+    ],
+    "data": "synthetic API and failure injection; no live financial data"
+  },
+  "newIntegration": {
+    "checks": [
+      "Shipped AMFI disclosure snapshot decodes",
+      "Disclosure-only snapshot does not claim offline NAV history",
+      "Local catalog uses no HTTP",
+      "Local history preserves price and converts dates",
+      "Missing local scheme does not silently fetch a different source",
+      "Rejects wrong scheme identity",
+      "Rejects duplicate dates",
+      "Rejects nonpositive NAV",
+      "Rejects invalid calendar date",
+      "Cost comparison includes every eligible tied fund, not only the top ten",
+      "Withheld categories do not acquire a cost-based recommendation",
+      "Research buys only after scoring date",
+      "Changing all future prices leaves historical scores and selections identical"
+    ],
+    "pass": 13,
+    "network": "Blocked; source adapter and research leakage tests"
+  },
+  "goalConfirmation": {
+    "checks": [
+      {
+        "name": "Button round trips preserve both price dates and the fixed goal requirement",
+        "pass": true,
+        "detail": {
+          "ref": "2026-10",
+          "refAnn": "2025-10",
+          "need": 1338225.5776000002
+        }
+      },
+      {
+        "name": "Retirement uses its own older reference month",
+        "pass": true,
+        "detail": {
+          "ref": "2026-10",
+          "refAnn": "2025-10",
+          "need": 3404445.869414401
+        }
+      },
+      {
+        "name": "Retyping expenses updates only their own price reference",
+        "pass": true,
+        "detail": {
+          "ref": "2026-10",
+          "refAnn": "2027-10",
+          "need": 3029944.704000001
+        }
+      },
+      {
+        "name": "Expense update leaves the fixed goal price intact",
+        "pass": true,
+        "detail": {
+          "ref": "2026-10",
+          "refAnn": "2027-10",
+          "need": 1338225.5776000002
+        }
+      },
+      {
+        "name": "Retyping the fixed cost intentionally reprices it",
+        "pass": true,
+        "detail": {
+          "ref": "2027-10",
+          "refAnn": "2027-10",
+          "need": 1262476.9600000004
+        }
+      },
+      {
+        "name": "All offered alternatives validate and fund their target",
+        "pass": true,
+        "detail": [
+          {
+            "date": "2077-10",
+            "type": "fixed",
+            "extra": 4900,
+            "later": null,
+            "smaller": 30100000,
+            "pass": true
+          },
+          {
+            "date": "2027-11",
+            "type": "fixed",
+            "extra": null,
+            "later": null,
+            "smaller": 100000,
+            "pass": true
+          },
+          {
+            "date": "2030-10",
+            "type": "fixed",
+            "extra": 30600,
+            "later": "2032-08",
+            "smaller": 1900000,
+            "pass": true
+          },
+          {
+            "date": "2028-10",
+            "type": "retirement",
+            "extra": 191700,
+            "later": null,
+            "smaller": 25000,
+            "pass": true
+          }
+        ]
+      },
+      {
+        "name": "Unsupported later date is withheld",
+        "pass": true
+      },
+      {
+        "name": "Unsupported extra SIP is withheld",
+        "pass": true
+      }
+    ],
+    "network": "blocked; isolated browser and simulated dates"
+  },
+  "goalAudit": {
+    "source": "C:/Users/lalit/Documents/Codex/2026-10-09/referenced-chatgpt-conversation-this-is-an/outputs/SIP-Compass-v1.5-Codex/SIP-Compass.html",
+    "sha256": "3d92bc7f8b05c53b59d7c323ce9d7e8f184e309a94e3f48d4391f6af3697f1c5",
+    "sourceUnchanged": true,
+    "selfTests": "PASS  3.5% blip kept for equity\nPASS  9.5% blip dropped for equity\nPASS  3% blip dropped for debt\nPASS  1.5% blip kept for debt\nPASS  face-value rescales history before a jump\nPASS  glitch filter does not rescale a level change\nPASS  XIRR of 10% over one year — 0.10000\nPASS  a tie is not a beat\nPASS  a real gap still counts as a beat\nPASS  credit window is 10 years\nPASS  blank category is not a match\nPASS  medium accepts only its own AMFI name\nPASS  long does not swallow medium\nPASS  tie flags only on index and gold; liquid and arbitrage stay ranked\nPASS  credit risk is never eligible\nPASS  a losing worst year is blocked inside 3 years\nPASS  a positive worst year stays inside 3 years\nPASS  a loss is not taxed as income — 95000\nPASS  debt gain is taxed at slab plus cess — 104816\nPASS  no plan has more than 5 funds — 0 breaches / 126\nPASS  every plan adds up to 100% — 0 breaches\nPASS  no emergency fund means 100% liquid — 0 breaches\nPASS  shared end date ignores a later spike\nPASS  identical benchmark has down capture 100\nPASS  identical benchmark has zero tracking error\nPASS  identical benchmark is beaten zero percent of the time\nPASS  Time Machine strategies spend the same budget including paused cash\nPASS  historic NAV fall prompts investigation and current factsheet checks\nPASS  historic side-pocket alone does not order a replacement\nPASS  credit-risk holding still says Replace even with a historic flag\nPASS  equity needed within 3 years still says Replace\nPASS  liquid holding retains the underperformance check\nPASS  arbitrage holding retains the underperformance check\nPASS  held-back holdings category supplies neither book nor rows\nPASS  complete holdings category can still use its display rows\nPASS  held-back maturity category supplies no goal suggestion\nPASS  held-back maturity ladder hides fund rows\nPASS  complete maturity category still matches the goal date\nPASS  all categories held back produces a clear empty holdings picker\nPASS  negative-worst-year cash fallback cannot win a short goal\nPASS  fallback can select cash only after the same loss check\nPASS  eligible normal debt choice is preserved\nPASS  old cached liquid tie flag cannot suppress its ranking\nPASS  goal guard: equity share is full before the glide window\nPASS  goal guard: equity share is zero inside the final year\nPASS  goal guard: equity share falls in a straight line\nPASS  goal guard: equity never rises as the date approaches\nPASS  goal guard: months to a goal are counted from today\nPASS  goal guard: today's ₹10 L at 6% for 5 years is ₹13.38 L\nPASS  goal guard: future-rupee amounts are not inflated twice\nPASS  goal guard: only the needed amount is protected, not the whole portfolio\nPASS  goal guard: an already-protected goal suggests no move\nPASS  goal guard: a big goal with small savings is flagged as a shortfall\nPASS  goal guard: the suggested extra SIP closes the conservative gap\nPASS  goal guard: retirement bucket is actually held by the safe date\nPASS  goal guard: retirement keeps the usual defensive share before the bucket window\nPASS  goal guard: a crash today hits only the equity side\nPASS  goal guard: a past date is rejected\nPASS  v1.4.1: a saved today's-money goal needs the same rupees a year later\nPASS  v1.4.1: a saved retirement bucket needs the same rupees a year later\nPASS  v1.4.1: old saved goals get this month as an assumed price date; a stored one is kept\nPASS  v1.4.1: stored numbers are read as numbers, and a bad stored value blocks advice\nPASS  v1.4.1: an underfunded retirement bucket is a shortfall even when all of it is defensive\nPASS  v1.4.1: a retirement shortfall gets an extra-SIP that closes it\nPASS  v1.4.1: an exactly funded retirement bucket is not short\nPASS  v1.4.1: an overfunded retirement bucket is not short\nPASS  v1.4.1: the shown month-by-month moves replay exactly to the projected balances\nPASS  v1.4.1: when the SIP covers the gap, no equity sale is advised\nPASS  v1.4.1: inside the final year the whole need moves now, in advice and projection alike\nPASS  v1.4.1: the chosen 'fully protected by' deadline is met in the projected balances (0, 1, 3 years)\nPASS  v1.4.1: a goal already past its protection deadline moves everything in month one\nPASS  v1.4.1: impossible inputs give errors, never advice\nPASS  v1.4.1: a malformed goal is rejected without crashing\nPASS  v1.4.1: an exactly funded zero-return goal is not a shortfall (no rounding dust)\nPASS  v1.4.1: a real ₹500 shortfall is still caught\nPASS  v1.4.1: a shortfall offers a later date and a smaller goal that work\nPASS  v1.4.1: no balance or transfer ever goes negative, even after a 90% crash\nPASS  v1.4.2: switching goal type and back keeps the saved price month and the need\nPASS  v1.4.2: retirement expenses use their own price month, not the fixed amount's\nPASS  v1.4.2: a v1.4.1 goal's price month carries over to both costs; the warning flag carries too\nPASS  v1.4.2: saving never writes a newly invalid draft; its last good version is kept\nPASS  v1.4.2: an invalid goal with no good version is not saved at all\nPASS  v1.4.2: no later date beyond the form's 50-year limit is offered\nPASS  v1.4.2: no extra SIP above the form's monthly limit is offered\nPASS  v1.4.2: every offered alternative can be entered in the form and closes the gap as shown\nPASS  v1.5-Codex: every section tab is reachable (all fit, or an arrow shows the hidden ones)\nPASS  v1.5-Codex: the tab row has the full header width, below the brand, not squeezed by the status text\nPASS  v1.5-Codex: brand, status pill and theme button never overlap\nPASS  v1.5: zero TER is a value; missing TER is unavailable\nPASS  v1.5: negative, nonfinite and impossible TER are rejected\nPASS  v1.5: future and impossible disclosure dates are rejected\nPASS  v1.5: older TER remains visibly dated, never made current\nPASS  v1.5: zero AUM is withheld\nPASS  v1.5: code lookup also checks the fund name\nPASS  v1.5: unknown bundle schemas cannot supply facts\nPASS  v1.5: distinct index variants never share normalized names\nPASS  Research: post-cut observations cannot enter training history\nPASS  Research: forward holding-period growth is measured separately\nPASS  Research: missing end history withholds an outcome\nPASS  Research: tied index categories are not treated as active rankings\n\n0 failed, 100 checks. v1.5-Codex",
+    "results": {
+      "priceReference": {
+        "pass": true,
+        "before": 1338225.5776000002,
+        "after": 1338225.5776000002
+      },
+      "retirementShortfall": {
+        "pass": true,
+        "status": "short",
+        "deficit": 2300000,
+        "extraSip": 191700,
+        "visible": "Retirement bucket · 1 yr 0 mo leftMy goalShortfall\n   \n     Bucket needed at retirement₹24.00 L4 yrs × ₹6.00 L (Oct 2026 rupees), inflated\n     Protected today₹1.00 Lplan wants ₹1.00 L this month\n     Equity now vs plan0% → 0%of this goal's money\n     If equity fell 30% today₹1.00 Lfrom ₹1.00 L\n   \n     On the date · middle case₹1.00 Lprotected · ₹1.00 L in all · equity 0%, debt 0%\n     On the date · conservative₹1.00 Lprotected · equity 0% a year\n     Conservative + crash today₹1.00 Lprotected · 30% equity fall now\n   Shortfall. At conservative returns (equity 0%, debt 0% a year) about ₹1.00 L would be protected on the date against ₹24.00 L needed: short by about ₹23.00 L. This is an estimate, not a certainty. Everything you hold for this goal is already defensive, so the gap is the amount, not the mix.\n      \n      Add about ₹1.92 L/month from now on, or\n      No later date within this page's range (up to 30 years later, at most 50 years from now) closes it.\n      lower the yearly expenses to about ₹25,000 a year (in Oct 2026 rupees), or\n      fund part of it from other savings.\n      Keeping more in equity is not a fix: it adds a second uncertainty instead of closing the gap.Existing equity: no sale needed in the next 12 months.\n   Month-by-month plan (next 12 months, middle case)\n     MonthSIP → defensiveSIP → equitySell equity → defensiveDefensive afterEquity afterOct 2026₹0₹0–₹1.00 L₹0Nov 2026₹0₹0–₹1.00 L₹0Dec 2026₹0₹0–₹1.00 L₹0Jan 2027₹0₹0–₹1.00 L₹0Feb 2027₹0₹0–₹1.00 L₹0Mar 2027₹0₹0–₹1.00 L₹0Apr 2027₹0₹0–₹1.00 L₹0May 2027₹0₹0–₹1.00 L₹0Jun 2027₹0₹0–₹1.00 L₹0Jul 2027₹0₹0–₹1.00 L₹0Aug 2027₹0₹0–₹1.00 L₹0Sept 2027₹0₹0–₹1.00 L₹0\n     Balances are right after that month's moves, before its returns. The same schedule produces every figure above. Reopen the page each month: it re-plans from what you actually hold.\n   How to move money: an STP (systematic transfer plan) only works between schemes of the same fund house, and every transfer is a redemption that may attract capital-gains tax and exit loads. Across fund houses it means separate sell and buy orders. All figures are before tax and costs. A defensive fund lowers the swings; it does not guarantee the amount."
+      },
+      "sipFirst": {
+        "pass": true,
+        "firstMonth": {
+          "k": 0,
+          "left": 36,
+          "tgt": 600000,
+          "sipD": 100000,
+          "sipE": 50000,
+          "move": 0,
+          "E": 550000,
+          "D": 600000
+        },
+        "visible": "Fixed-date goal · 3 yr 0 mo leftMy goalTime to protect\n   \n     Needed on the date₹10.00 Lfuture rupees, as entered\n     Protected today₹5.00 Lplan wants ₹6.00 L this month\n     Equity now vs plan50% → 48%of this goal's money\n     If equity fell 30% today₹8.50 Lfrom ₹10.00 L\n   \n     On the date · middle case₹10.00 Lprotected · ₹64.00 L in all · equity 0%, debt 0%\n     On the date · conservative₹10.00 Lprotected · equity 0% a year\n     Conservative + crash today₹10.00 Lprotected · 30% equity fall now\n   This month's SIP: ₹1.00 L to the defensive side, ₹50,000 to equity.Existing equity: no sale needed in the next 12 months; the SIP does the protecting.\n   Month-by-month plan (next 12 months, middle case)\n     MonthSIP → defensiveSIP → equitySell equity → defensiveDefensive afterEquity afterOct 2026₹1.00 L₹50,000–₹6.00 L₹5.50 LNov 2026₹16,667₹1.33 L–₹6.17 L₹6.83 LDec 2026₹16,667₹1.33 L–₹6.33 L₹8.17 LJan 2027₹16,667₹1.33 L–₹6.50 L₹9.50 LFeb 2027₹16,667₹1.33 L–₹6.67 L₹10.83 LMar 2027₹16,667₹1.33 L–₹6.83 L₹12.17 LApr 2027₹16,667₹1.33 L–₹7.00 L₹13.50 LMay 2027₹16,667₹1.33 L–₹7.17 L₹14.83 LJun 2027₹16,667₹1.33 L–₹7.33 L₹16.17 LJul 2027₹16,667₹1.33 L–₹7.50 L₹17.50 LAug 2027₹16,667₹1.33 L–₹7.67 L₹18.83 LSept 2027₹16,667₹1.33 L–₹7.83 L₹20.17 L\n     Balances are right after that month's moves, before its returns. The same schedule produces every figure above. Reopen the page each month: it re-plans from what you actually hold.\n   How to move money: an STP (systematic transfer plan) only works between schemes of the same fund house, and every transfer is a redemption that may attract capital-gains tax and exit loads. Across fund houses it means separate sell and buy orders. All figures are before tax and costs. A defensive fund lowers the swings; it does not guarantee the amount."
+      },
+      "finalYear": {
+        "pass": true,
+        "firstMonth": {
+          "k": 0,
+          "left": 6,
+          "tgt": 1000000,
+          "sipD": 0,
+          "sipE": 0,
+          "move": 1000000,
+          "E": 0,
+          "D": 1000000
+        },
+        "visible": "Fixed-date goal · 6 months leftMy goalTime to protect\n   \n     Needed on the date₹10.00 Lfuture rupees, as entered\n     Protected today₹0plan wants ₹10.00 L this month\n     Equity now vs plan100% → 0%of this goal's money\n     If equity fell 30% today₹7.00 Lfrom ₹10.00 L\n   \n     On the date · middle case₹10.00 Lprotected · ₹10.00 L in all · equity 0%, debt 0%\n     On the date · conservative₹10.00 Lprotected · equity 0% a year\n     Conservative + crash today₹7.00 Lprotected · 30% equity fall now\n   Move now: about ₹10.00 L from equity into a defensive fund (short-duration, corporate bond, or a target-maturity fund ending before your date). The goal is inside your “fully protected by” window, so this is done in one go.\n   Month-by-month plan (next 6 months, middle case)\n     MonthSIP → defensiveSIP → equitySell equity → defensiveDefensive afterEquity afterOct 2026₹0₹0₹10.00 L₹10.00 L₹0Nov 2026₹0₹0–₹10.00 L₹0Dec 2026₹0₹0–₹10.00 L₹0Jan 2027₹0₹0–₹10.00 L₹0Feb 2027₹0₹0–₹10.00 L₹0Mar 2027₹0₹0–₹10.00 L₹0\n     Balances are right after that month's moves, before its returns. The same schedule produces every figure above. Reopen the page each month: it re-plans from what you actually hold.\n   How to move money: an STP (systematic transfer plan) only works between schemes of the same fund house, and every transfer is a redemption that may attract capital-gains tax and exit loads. Across fund houses it means separate sell and buy orders. All figures are before tax and costs. A defensive fund lowers the swings; it does not guarantee the amount."
+      },
+      "deadlines": [
+        {
+          "type": "fixed",
+          "safeY": 0,
+          "pass": true,
+          "E": 0,
+          "D": 1000000,
+          "required": 1000000
+        },
+        {
+          "type": "fixed",
+          "safeY": 1,
+          "pass": true,
+          "E": 1.0186340659856796e-9,
+          "D": 1000000,
+          "required": 1000000
+        },
+        {
+          "type": "fixed",
+          "safeY": 3,
+          "pass": true,
+          "E": 5.820766091346741e-11,
+          "D": 999999.9999999998,
+          "required": 1000000
+        },
+        {
+          "type": "retirement",
+          "safeY": 0,
+          "pass": true,
+          "E": 0,
+          "D": 999999.9999999998,
+          "required": 1000000
+        },
+        {
+          "type": "retirement",
+          "safeY": 1,
+          "pass": true,
+          "E": 3.7834979593753815e-10,
+          "D": 1000000,
+          "required": 1000000
+        },
+        {
+          "type": "retirement",
+          "safeY": 3,
+          "pass": true,
+          "E": 2.3283064365386963e-10,
+          "D": 1000000,
+          "required": 1000000
+        }
+      ],
+      "originalCustomDeadline": {
+        "pass": true,
+        "atDeadline": {
+          "k": 12,
+          "left": 36,
+          "tgt": 1000000,
+          "sipD": 0,
+          "sipE": 0,
+          "move": 149273.68927368935,
+          "E": 0,
+          "D": 1000000
+        }
+      },
+      "scheduleReplay": {
+        "pass": true,
+        "scenarios": 18,
+        "failures": []
+      },
+      "rounding": {
+        "pass": true,
+        "exact": {
+          "status": "protect",
+          "defensive": 1000000
+        },
+        "realDeficit": 500
+      },
+      "invalidInput": {
+        "pass": true,
+        "visible": "⚠Fix this to see the plan. Your changes are not saved until then.Crash test must be 90% or less."
+      },
+      "blankInput": {
+        "pass": true
+      },
+      "bounds": {
+        "pass": true
+      },
+      "sameTypeClick": {
+        "before": {
+          "ref": "2026-10",
+          "need": 1338225.5776000002
+        },
+        "after": {
+          "ref": "2026-10",
+          "need": 1338225.5776000002,
+          "visible": "FIXED-DATE GOAL · 4 YR 0 MO LEFT\nMy goal\nShortfall\nNEEDED ON THE DATE\n₹13.38 L\n₹10.00 L in Oct 2026 rupees + 6% inflation\nPROTECTED TODAY\n₹0\nplan wants ₹4.00 L this month\nEQUITY NOW VS PLAN\n100% → 60%\nof this goal's money\nIF EQUITY FELL 30% TODAY\n₹7.00 L\nfrom ₹10.00 L\nON THE DATE · MIDDLE CASE\n₹10.00 L\nprotected · ₹10.00 L in all · equity 0%, debt 0%\nON THE DATE · CONSERVATIVE\n₹10.00 L\nprotected · equity 0% a year\nCONSERVATIVE + CRASH TODAY\n₹7.00 L\nprotected · 30% equity fall now\nShortfall. At conservative returns (equity 0%, debt 0% a year) about ₹10.00 L would be protected on the date against ₹13.38 L needed: short by about ₹3.38 L. This is an estimate, not a certainty.\nAdd about ₹7,100/month from now on, or\nNo later date within this page's range (up to 30 years later, at most 50 years from now) closes it.\nlower the goal to about ₹7.47 L (in Oct 2026 rupees), or\nfund part of it from other savings.\nKeeping more in equity is not a fix: it adds a second uncertainty instead of closing the gap.\nExisting equity: move about ₹33,333 this month into a defensive fund (short-duration, corporate bond, or a target-maturity fund ending before your date). Over the next 12 months the plan moves about ₹3.30 L in total; the month-by-month list is below.\nMONTH-BY-MONTH PLAN (NEXT 12 MONTHS, MIDDLE CASE)\n\nHow to move money: an STP (systematic transfer plan) only works between schemes of the same fund house, and every transfer is a redemption that may attract capital-gains tax and exit loads. Across fund houses it means separate sell and buy orders. All figures are before tax and costs. A defensive fund lowers the swings; it does not guarantee the amount."
+        }
+      },
+      "invalidDraftAddedGoal": {
+        "before": {
+          "saved": null,
+          "dirty": true,
+          "crash": 150
+        },
+        "after": {
+          "saved": [
+            {
+              "name": "My goal",
+              "type": "fixed",
+              "date": "2035-04",
+              "amount": 1500000,
+              "basis": "today",
+              "eq": 300000,
+              "def": 0,
+              "sip": 10000,
+              "annual": 600000,
+              "bucketYrs": 4,
+              "infl": 6,
+              "reEq": 10,
+              "reEqLow": 7,
+              "reDebt": 6.5,
+              "crash": 30,
+              "startY": 5,
+              "safeY": 1,
+              "preEq": 80,
+              "ref": "2027-10",
+              "refAnn": "2027-10",
+              "id": "gcodxo38t"
+            },
+            {
+              "name": "Goal 2",
+              "type": "fixed",
+              "date": "2032-04",
+              "amount": 1500000,
+              "basis": "today",
+              "eq": 300000,
+              "def": 0,
+              "sip": 10000,
+              "annual": 600000,
+              "bucketYrs": 4,
+              "infl": 6,
+              "reEq": 10,
+              "reEqLow": 7,
+              "reDebt": 6.5,
+              "crash": 30,
+              "startY": 5,
+              "safeY": 1,
+              "preEq": 80,
+              "ref": "2027-10",
+              "refAnn": "2027-10",
+              "id": "g97rmprdl"
+            }
+          ],
+          "dirty": false,
+          "crash": 30
+        }
+      }
+    },
+    "ui": [
+      {
+        "width": 1440,
+        "tab": "plan",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "goal",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "funds",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "debt",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "lab",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "check",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "ai",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "learn",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "plan",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "goal",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "funds",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "debt",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "lab",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "check",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "ai",
+        "visible": true,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "learn",
+        "visible": true,
+        "overflow": false
+      }
+    ],
+    "persistence": [
+      "First",
+      "Second",
+      "Third"
+    ],
+    "pageErrors": [],
+    "network": "blocked; synthetic scenarios and isolated browser storage"
+  },
+  "live": {
+    "LIVE_SCORED": {
+      "selfTests": "0 failed, 100 checks. v1.5-Codex",
+      "status": "Local · NAV 8 Oct 2026 · 603 funds · 5 failed",
+      "categories": {
+        "index": {
+          "n": 13,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "flexi": {
+          "n": 27,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "large": {
+          "n": 27,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "largemid": {
+          "n": 26,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "mid": {
+          "n": 21,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "multi": {
+          "n": 8,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "small": {
+          "n": 22,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "elss": {
+          "n": 30,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "baf": {
+          "n": 19,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "gold": {
+          "n": 7,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "overnight": {
+          "n": 32,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "liquid": {
+          "n": 36,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "mm": {
+          "n": 21,
+          "rankOk": true,
+          "failed": 1,
+          "hold": ""
+        },
+        "ultra": {
+          "n": 23,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "us2s": {
+          "n": 20,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "arb": {
+          "n": 25,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "incarb": {
+          "n": 9,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "floater": {
+          "n": 12,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "short": {
+          "n": 22,
+          "rankOk": true,
+          "failed": 2,
+          "hold": ""
+        },
+        "bpsu": {
+          "n": 19,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "corp": {
+          "n": 21,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "medium": {
+          "n": 13,
+          "rankOk": true,
+          "failed": 1,
+          "hold": ""
+        },
+        "medlong": {
+          "n": 12,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "dyn": {
+          "n": 22,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "long": {
+          "n": 7,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "gilt": {
+          "n": 22,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "gilt10": {
+          "n": 5,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        },
+        "credit": {
+          "n": 13,
+          "rankOk": true,
+          "failed": 1,
+          "hold": ""
+        },
+        "tmf": {
+          "n": 69,
+          "rankOk": true,
+          "failed": 0,
+          "hold": ""
+        }
+      },
+      "funds": [
+        {
+          "name": "Motilal Oswal Nifty 50 Index Fund",
+          "ter": {
+            "value": 0.19,
+            "date": "2026-10-08",
+            "name": "Motilal Oswal Nifty 50 Index Fund",
+            "id": "MOTO/O/O/EIN/19/09/0018",
+            "category": "Other Scheme - Index Funds",
+            "source": "https://www.amfiindia.com/ter-of-mf-schemes",
+            "age": 1,
+            "stale": false
+          },
+          "aum": {
+            "value": 838.69,
+            "date": "2026-10-08",
+            "name": "Motilal Oswal Nifty 50 Index Fund",
+            "category": "Index Funds ETFs",
+            "qualification": "",
+            "source": "https://www.amfiindia.com/otherdata/fund-performance",
+            "age": 1,
+            "stale": false
+          }
+        },
+        {
+          "name": "Navi Nifty 50 Index Fund",
+          "ter": {
+            "value": 0.1,
+            "date": "2026-10-08",
+            "name": "Navi Nifty 50 Index Fund",
+            "id": "NAVI/O/O /EIN/21/06/0010",
+            "category": "Other Scheme - Index Funds",
+            "source": "https://www.amfiindia.com/ter-of-mf-schemes",
+            "age": 1,
+            "stale": false
+          },
+          "aum": {
+            "value": 3880.83,
+            "date": "2026-10-08",
+            "name": "Navi Nifty 50 Index Fund",
+            "category": "Index Funds ETFs",
+            "qualification": "",
+            "source": "https://www.amfiindia.com/otherdata/fund-performance",
+            "age": 1,
+            "stale": false
+          }
+        },
+        {
+          "name": "Nippon India Index Fund - Nifty 50 Plan",
+          "ter": {
+            "value": 0.13,
+            "date": "2026-09-30",
+            "name": "Nippon India Index Fund - Nifty 50 Plan",
+            "id": "NIMF/O/O/EIN/10/03/0040",
+            "category": "Other Scheme - Index Funds",
+            "source": "https://www.amfiindia.com/ter-of-mf-schemes",
+            "age": 9,
+            "stale": false
+          },
+          "aum": {
+            "value": 3519.1873,
+            "date": "2026-10-08",
+            "name": "Nippon India Index Fund - Nifty 50 Plan",
+            "category": "Index Funds ETFs",
+            "qualification": "^",
+            "source": "https://www.amfiindia.com/otherdata/fund-performance",
+            "age": 1,
+            "stale": false
+          }
+        },
+        {
+          "name": "BANDHAN Nifty 50 Index Fund",
+          "ter": {
+            "value": 0.16,
+            "date": "2026-10-08",
+            "name": "Bandhan Nifty 50 Index Fund",
+            "id": "BNDN/O/O/EIN/09/11/0022",
+            "category": "Other Scheme - Index Funds",
+            "source": "https://www.amfiindia.com/ter-of-mf-schemes",
+            "age": 1,
+            "stale": false
+          },
+          "aum": {
+            "value": 2708.0686,
+            "date": "2026-10-08",
+            "name": "Bandhan Nifty 50 Index Fund",
+            "category": "Index Funds ETFs",
+            "qualification": "^",
+            "source": "https://www.amfiindia.com/otherdata/fund-performance",
+            "age": 1,
+            "stale": false
+          }
+        }
+      ]
+    },
+    "LIVE_RESEARCH": {
+      "method": "Current scoring rules, six annual starts, 5-year minimum training history, top-five equal initial weights bought at the first available NAV after selection and held to the three-year endpoint; compare with eligible-category median forward CAGR. No rebalancing; before tax and exit loads; NAV expenses already reflected.",
+      "limits": [
+        "Present-day fund universe: closed or merged funds may be absent (survivorship bias).",
+        "Present-day scheme names and categories; no point-in-time classifications.",
+        "Overlapping three-year outcomes are not independent observations.",
+        "No historical TER/AUM inputs; no claim of out-of-sample strategy validation.",
+        "This is a lump-sum selection comparison, not a SIP return calculation."
+      ],
+      "windows": [
+        {
+          "category": "flexi",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 16,
+          "portfolio": 0.244895085331005,
+          "median": 0.20464987443646065,
+          "excess": 0.04024521089454436
+        },
+        {
+          "category": "flexi",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "eligible": 17,
+          "portfolio": 0.16701847544170567,
+          "median": 0.1702828581128708,
+          "excess": -0.0032643826711651336
+        },
+        {
+          "category": "flexi",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "eligible": 18,
+          "portfolio": 0.23386386652275837,
+          "median": 0.23128378707540442,
+          "excess": 0.0025800794473539446
+        },
+        {
+          "category": "flexi",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "eligible": 18,
+          "portfolio": 0.15199265167006648,
+          "median": 0.17805416488489223,
+          "excess": -0.02606151321482575
+        },
+        {
+          "category": "flexi",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "eligible": 19,
+          "portfolio": 0.1755260600169768,
+          "median": 0.18960811210363215,
+          "excess": -0.014082052086655361
+        },
+        {
+          "category": "flexi",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 22,
+          "portfolio": 0.11946333699418976,
+          "median": 0.10457609350958708,
+          "excess": 0.014887243484602686
+        },
+        {
+          "category": "large",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 26,
+          "portfolio": 0.1927041888242731,
+          "median": 0.18657289721376313,
+          "excess": 0.006131291610509959
+        },
+        {
+          "category": "large",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "large",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "large",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "large",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "large",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 23,
+          "portfolio": 0.08465038889688548,
+          "median": 0.08906812148740317,
+          "excess": -0.004417732590517698
+        },
+        {
+          "category": "largemid",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 18,
+          "portfolio": 0.23576503686561567,
+          "median": 0.20819884983696268,
+          "excess": 0.02756618702865299
+        },
+        {
+          "category": "largemid",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "largemid",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "largemid",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "largemid",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "largemid",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 20,
+          "portfolio": 0.11890988147060422,
+          "median": 0.1177258206915891,
+          "excess": 0.001184060779015117
+        },
+        {
+          "category": "mid",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 17,
+          "portfolio": 0.2285105759999948,
+          "median": 0.24798111532257017,
+          "excess": -0.019470539322575364
+        },
+        {
+          "category": "mid",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "mid",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "mid",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "mid",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "mid",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 18,
+          "portfolio": 0.13898654510545372,
+          "median": 0.1426842958248189,
+          "excess": -0.003697750719365178
+        },
+        {
+          "category": "multi",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 8,
+          "portfolio": 0.23147597379383167,
+          "median": 0.21016665411667057,
+          "excess": 0.021309319677161098
+        },
+        {
+          "category": "multi",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "multi",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "multi",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "multi",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "eligible": 6,
+          "portfolio": 0.19718711686732515,
+          "median": 0.21080018540373668,
+          "excess": -0.013613068536411532
+        },
+        {
+          "category": "multi",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 6,
+          "portfolio": 0.12809854666478637,
+          "median": 0.12466797134520158,
+          "excess": 0.0034305753195847943
+        },
+        {
+          "category": "small",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 10,
+          "portfolio": 0.2642979391895115,
+          "median": 0.2620300157466606,
+          "excess": 0.002267923442850872
+        },
+        {
+          "category": "small",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "eligible": 14,
+          "portfolio": 0.32226939808959965,
+          "median": 0.3098478441458914,
+          "excess": 0.012421553943708252
+        },
+        {
+          "category": "small",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "small",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "small",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "small",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 13,
+          "portfolio": 0.12971175382552458,
+          "median": 0.1410274522744459,
+          "excess": -0.01131569844892133
+        },
+        {
+          "category": "elss",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "eligible": 24,
+          "portfolio": 0.215044474805423,
+          "median": 0.2028368210957121,
+          "excess": 0.012207653709710886
+        },
+        {
+          "category": "elss",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "elss",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "elss",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "elss",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "elss",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1538352000000,
+          "end": 1633046400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1569888000000,
+          "end": 1664582400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1601510400000,
+          "end": 1696118400000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1633046400000,
+          "end": 1727740800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1664582400000,
+          "end": 1759276800000,
+          "held": "Forward history is incomplete for the eligible cohort; comparison withheld."
+        },
+        {
+          "category": "baf",
+          "cut": 1696118400000,
+          "end": 1790812800000,
+          "eligible": 13,
+          "portfolio": 0.0930018217728732,
+          "median": 0.0972056459746653,
+          "excess": -0.004203824201792106
+        }
+      ],
+      "message": "11 of 20 available comparisons exceeded the category median. 28 comparisons were withheld. This describes this biased sample; it is not a forecast or a probability of winning.\n\nCATEGORY\tSELECTION DATE\tELIGIBLE FUNDS\tTOP-FIVE BASKET CAGR\tMEDIAN FUND CAGR\tDIFFERENCE\nFlexi Cap\t2018-10-01\t16\t24.49%\t20.46%\t4.02 pp\nFlexi Cap\t2019-10-01\t17\t16.70%\t17.03%\t-0.33 pp\nFlexi Cap\t2020-10-01\t18\t23.39%\t23.13%\t0.26 pp\nFlexi Cap\t2021-10-01\t18\t15.20%\t17.81%\t-2.61 pp\nFlexi Cap\t2022-10-01\t19\t17.55%\t18.96%\t-1.41 pp\nFl"
+    },
+    "LAYOUT": [
+      {
+        "width": 1440,
+        "tab": "plan",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "goal",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "funds",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "debt",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "lab",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "check",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "ai",
+        "overflow": false
+      },
+      {
+        "width": 1440,
+        "tab": "learn",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "plan",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "goal",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "funds",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "debt",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "lab",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "check",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "ai",
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "tab": "learn",
+        "overflow": false
+      }
+    ],
+    "ERRORS": []
+  },
+  "limitations": [
+    "Live updater used an in-memory SQLite database because ordinary process file writes fail in this execution environment.",
+    "Actual on-disk SQLite updates, atomic file replacement and Windows scheduled task execution remain unverified here.",
+    "Included data.js contains verified disclosures only; run the updater on the PC to create the full local NAV-history bundle.",
+    "The full 16 MB compressed NAV snapshot could not be written through the patch tool because automatic approval review exceeded its input budget."
+  ]
+}
